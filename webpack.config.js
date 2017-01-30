@@ -2,8 +2,20 @@ const webpack = require('webpack')
 const path = require('path');
 
 module.exports = {
-  entry: './app.js',
+  entry: {
+    js: './app.js',
+    vendor: ['react']
+  },
   output: {
-    filename: 'bundle.js'
+    filename: '[name].bundle.js'
+  },
+  module: {
+    rules: [{
+      test: /\.(js|jsx)$/,
+      exclude: /node_modules/,
+      use: [
+        'babel-loader'
+      ]
+    }]
   }
 }
