@@ -1,0 +1,23 @@
+{
+  "name": "react-strictly-necesary",
+  "version": "0.0.1",
+  "description": "React scriptly necesary",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RubenGuerrero/react-strictly-necesary.git"
+  },
+  "author": "Rubén Guerrero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RubenGuerrero/react-strictly-necesary/issues"
+  },
+  "homepage": "https://github.com/RubenGuerrero/react-strictly-necesary#readme",
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  }
+}
