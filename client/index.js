@@ -3,13 +3,19 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import App from 'containers/App';
-import store from 'store';
+import DevTools from 'containers/DevTools';
+import configureStore from 'store';
 
 import 'index.html';
 
+const store = configureStore({});
+
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <div>
+      <App />
+      <DevTools />
+    </div>
   </Provider>,
   document.getElementById('root')
 );

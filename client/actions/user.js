@@ -1,10 +1,8 @@
-const updateNameDone = (name) => ({
+const updateNameDone = name => ({
   type: 'UPDATE_NAME_DONE',
   name
 });
 
-export const updateName = (name) => {
-  return (dispatch) => {
-    dispatch(updateNameDone(name));
-  }
-}
+export const updateName = name => dispatch => {
+  dispatch(updateNameDone(name));
+};

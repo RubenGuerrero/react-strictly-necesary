@@ -1,21 +1,33 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { updateName } from 'actions/user';
 
 class App extends Component {
-  render(){
 
+  static propTypes = {
+    me: PropTypes.obj,
+    updateName: PropTypes.func
+  }
+
+  static defaultProps = {
+    me: {},
+    updateName: () => {}
+  }
+
+  render() {
     const {
       me,
       updateName
     } = this.props;
 
-    return <div>
-      <div>Hello world { me.name }</div>
-      <button onClick={() => updateName('Woooah')}>Update!</button>
-    </div>
+    return (
+      <div>
+        <div>Hello world { me.name }</div>
+        <button onClick={() => updateName('Woooah')}>Update!</button>
+      </div>
+    );
   }
 }
 
