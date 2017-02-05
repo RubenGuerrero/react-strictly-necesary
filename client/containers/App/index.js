@@ -7,7 +7,7 @@ import { updateName } from 'actions/user';
 class App extends Component {
 
   static propTypes = {
-    me: PropTypes.obj,
+    me: PropTypes.any,
     updateName: PropTypes.func
   }
 

@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware, compose } from 'redux';
+import { devToolsEnhancer } from 'redux-devtools-extension';
 import { persistState } from 'redux-devtools';
 import thunk from 'redux-thunk';
 
 import rootReducer from 'reducers';
-import DevTools from 'containers/DevTools';
 
 function getDebugSessionKey() {
   const matches = window.location.href.match(/[?&]debug_session=([^&#]+)\b/);
@@ -12,8 +12,9 @@ function getDebugSessionKey() {
 
 const enhancer = compose(
   applyMiddleware(thunk),
-  DevTools.instrument(),
-  persistState(getDebugSessionKey())
+  // DevTools.instrument(),
+  persistState(getDebugSessionKey()),
+  devToolsEnhancer()
 );
 
 export default function configureStore(initialState = {}) {
