@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "lint": "eslint ./client ./webpack.config.js -f table || true"
+    "lint": "eslint ./client ./webpack.config.js -f table || true",
+    "prod": "cross-env NODE_ENV=production webpack-dev-server --env.prod=true",
+    "build": "cross-env NODE_ENV=production webpack --env.prod=true"
   },
   "repository": {
     "type": "git",

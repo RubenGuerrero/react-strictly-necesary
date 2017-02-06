@@ -4,20 +4,28 @@ import { connect } from 'react-redux';
 
 import { updateName } from 'actions/user';
 
-class App extends Component {
+class Test extends Component {
 
   static propTypes = {
-    children: PropTypes.any.isRequired
+    me: PropTypes.object,
+    updateName: PropTypes.func
+  }
+
+  static defaultProps = {
+    me: {},
+    updateName: () => {}
   }
 
   render() {
     const {
-      children
+      me,
+      updateName
     } = this.props;
 
     return (
       <div>
-        { children }
+        <div>Hello world { me.name }</div>
+        <button onClick={() => updateName('Woooah')}>Update!</button>
       </div>
     );
   }
@@ -32,4 +40,4 @@ export default connect(
     me: state.me,
   }),
   dispatch => bindActionCreators(actionCreators, dispatch)
-)(App);
+)(Test);
