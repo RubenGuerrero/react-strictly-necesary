@@ -12,7 +12,6 @@ function getDebugSessionKey() {
 
 const enhancer = compose(
   applyMiddleware(thunk),
-  // DevTools.instrument(),
   persistState(getDebugSessionKey()),
   devToolsEnhancer()
 );

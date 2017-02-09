@@ -1,6 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const sourcePath = path.join(__dirname, './client');
 const staticsPath = path.join(__dirname, './static');
 
@@ -18,6 +20,10 @@ module.exports = function (env) {
       'process.env': { NODE_ENV: JSON.stringify(nodeEnv) }
     }),
     new webpack.NamedModulesPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'React',
+      template: './index.ejs'
+    })
   ];
 
   if (isProd) {
