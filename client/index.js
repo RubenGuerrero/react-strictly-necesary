@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
+import { Route } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
-import { syncHistoryWithStore } from 'react-router-redux';
+import Test from 'containers/Test';
 
 import configureStore from 'store';
-import routes from 'routes';
 
 const store = configureStore({});
-const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={history} routes={routes} />
+    <BrowserRouter>
+      <Route path="/" component={Test} />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );
