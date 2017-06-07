@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
 import { syncHistoryWithStore } from 'react-router-redux';
 
 import configureStore from 'store';
